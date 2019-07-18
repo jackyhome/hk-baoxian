@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+  <div class="container-fluid bg-light w-100 border-bottom position-sticky fixed-top">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Navbar</a>
+      <form class="form-inline">
+        <button class="btn btn-link my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+    </nav>
+  </div>
+  <div class="container-fluid h-100">
+    <div class="row">
+      <div style="width: 12em; min-height: 40em;" class="border-right">
+        <app-left-navigator></app-left-navigator>
+      </div>
+      <div class="col p-0">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <footer class="footer position-fixed fixed-bottom border-top">
+    <div class="container-fluid">
+        IM Workbench Version: 5.0.1
+    </div>
+  </footer>
+  <!--div class="row container-fluid bg-light border-top position-sticky fixed-bottom ubs-sticky-footer footer">
+    <span class="font-weight-light small text-black-50 text-right w-100">IM Workbench Version: 5.0.1</span>
+  </div-->

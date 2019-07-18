@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Hero Form</h1>
+    <p>{{ model }}</p>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="model.username" name="username" required #username="ngModel">
+        <div [hidden]="username.valid || username.pristine"
+        class="alert alert-danger">
+     Username is required
+   </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Alter Ego</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid">Submit</button>
+
+    </form>
+</div>

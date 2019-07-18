@@ -1,0 +1,42 @@
+<!--ul class="list-group">
+    <li class="list-group-item m-0">
+      <div class="btn-group-vertical m-0">
+      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate</button>
+      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate 1</button>
+      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate 2</button>
+    </div>
+    </li>
+    <li class="list-group-item-action align-items-center m-0">
+        <div class="accordion m-0 " id="accordionExample">
+            <div id="headingOne" class="w-100 border-bottom">
+                <a  class="ml-2" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  In-Progress
+                </a>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="btn-group-vertical float-right mr-2">
+                      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate</button>
+                      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate 1</button>
+                      <button class="btn-sm btn-outline-secondary btn-block mt-1">New Mandate 222</button>
+                    </div>
+              </div>
+            </div>
+    </li>
+    <li class="list-group-item d-flex align-items-center">
+      In Progress
+    </li>
+  </ul-->
+<p-panel *ngFor="let group of menuGroup" [toggleable]="true">
+  <p-header class="font-weight-bold font-italic">{{ group.id }}</p-header>
+  <div class="container-fluid p-0">
+  <table class="w-100 table-bordered">
+    <tr *ngFor="let item of group.items">
+      <td>
+    <button class="btn-sm btn-outline-secondary btn-block"
+      [routerLink]="[item.action]">{{ item.label }}</button>
+    </td>
+    </tr>
+    </table>
+  </div>
+</p-panel>

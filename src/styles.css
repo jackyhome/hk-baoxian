@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/primeng/resources/primeng.min.css';
+@import '../node_modules/primeng/resources/themes/nova-light/theme.css';
+@import '../node_modules/primeicons/primeicons.css'; 
+
+/* .imwb-btn-p {
+    padding: 0.1em;
+}
+.imwb-btn-m {
+    margin: 0em;
+} */
+
+input.imwb-input-l.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ng-star-inserted{
+    width: 13em;
+}

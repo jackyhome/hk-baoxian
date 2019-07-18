@@ -1,0 +1,29 @@
+<div class="ui-g ui-fluid">
+  <div *ngFor="let item of searchObj">
+    <div *ngIf="item.type == 'text'" class="ui-inputgroup p-1">
+      <!--span class="ui-inputgroup-addon text-nowrap" style="width: 18em; text-align: left"-->
+      <div class="ui-inputgroup-addon">
+        <p-checkbox [(ngModel)]="searchValue[item.id].isUsed" binary="true"></p-checkbox>
+        <span class="pl-1">{{ item.label }}</span>
+      </div>
+      <input *ngIf="searchValue[item.id].isUsed" [(ngModel)]="searchValue[item.id].value" type="text" pInputText
+        placeholder="{{ item.label }}" style="width: 15em;">
+    </div>
+    <div *ngIf="item.type == 'date'" class="ui-inputgroup p-1">
+      <div class="ui-inputgroup-addon">
+        <p-checkbox [(ngModel)]="searchValue[item.id].isUsed" binary="true"></p-checkbox>
+        <span class="pl-1">{{ item.label }}</span>
+      </div>
+      <ng-template [ngIf]="searchValue[item.id].isUsed">
+        <p-dropdown [options]="opDate" [(ngModel)]="searchValue[item.id].op" (onChange)="clearSearchValue(item.id)">
+        </p-dropdown>
+        <p-calendar [(ngModel)]="searchValue[item.id].value" showButtonBar="true"
+          selectionMode="{{searchValue[item.id].op == 'between'?'range':'single'}}" inputStyleClass="imwb-input-l">
+        </p-calendar>
+      </ng-template>
+    </div>
+  </div>
+  <div *ngIf="!isSearchUsed()" class="alert alert-light" style="height: 1em;">
+    Select any field to filter...
+  </div>
+</div>

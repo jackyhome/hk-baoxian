@@ -1,0 +1,7 @@
+<p-panel>
+  <p-header>Search: {{ searchType | uppercase }}</p-header>
+  <app-search-bar [searchObj]="searchItems" (search)="onSearch($event)"></app-search-bar>
+  <div class="w-100 text-right border-top ">
+    <a class="btn btn-sm btn-outline-info mt-2 " (click)="performSearch();">Search</a>
+  </div>
+</p-panel>
